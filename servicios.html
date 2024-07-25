@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Hotel Muso</title>
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/servicios.css">
+    <!--  -->
+    <!-- JERARQUIA DE CSS -->
+    <!--  -->
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="logo-container">
+            <img src="IMG/logo.png" alt="Logo de Gran Hotel Muso">
+            <h1>Gran Hotel Muso</h1>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="habitaciones.html">Habitaciones</a></li>
+                <li><a href="salones.html">Salones</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+        </div>
+        <!-- !LOGIN -->
+        <!-- LOGIN -->
+        <div class="login-container">
+            <a href="#" id="login-button" class="logged-out">Inicio de sesión</a>
+            <a href="mis-reservas.html" id="misReservas" class="logged-in">Mis reservas</a>
+            <a href="#" id="cerrarSesion" class="logged-in">Cerrar sesión</a>
+            <!-- HOOVER LOGIN -->
+            <div id="login-register-container" class="hidden">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Registro</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <form id="signin-form">
+                            <!-- !Form Inicio de sesion -->
+                            <div class="form-group">
+                                <label for="loginEmail">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                        <form id="signup-form">
+                            <!-- !Form Registro -->
+                            <div class="form-group">
+                                <label for="registerEmail">Nombre</label>
+                                <input type="text" class="form-control" id="registerNombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Apellidos</label>
+                                <input type="text" class="form-control" id="registerApellidos" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="registerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Teléfono</label>
+                                <input type="text" class="form-control" id="registerTelefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">Contraseña</label>
+                                <input type="password" class="form-control" id="registerPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- HOOVER LOGIN -->
+        </div>
+        <!-- FIN LOGIN -->
+    </nav>
+    <!-- FIN NAV -->
+
+    <!-- HEADER -->
+    <header>
+        <div class="mi-menu-especial">
+            <div class="header-content">
+                <img src="img/logo.png" alt="Logo de Gran Hotel Muso">
+                <div class="form-container">
+                    <form id="reserve-form"> 
+                        <div class="form-row">
+                            <label for="entrada">ENTRADA</label>
+                            <input type="date" id="fecha_entrada" name="fecha_entrada" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="salida">SALIDA</label>
+                            <input type="date" id="fecha_salida" name="fecha_salida" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="ocupacion">OCUPACIÓN</label>
+                            <input type="number" id="ocupacion" name="ocupacion" min="1" max="5" required>
+                        </div>
+                        <button  type="submit" class="submit-button">CONSULTAR DISPONIBILIDAD</button>
+
+                        <!--Boton de test para guardar las reservas, no se debe ver -->
+                        <button id="confirmarReserva" type="submit" class="submit-button" hidden>CONSULTAR DISPONIBILIDAD</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- FIN HEADER -->
+
+    <!--  FIXED -->
+    <div id="fixed">
+        <form id="reserve-form">
+            <div>
+                <label for="entrada">ENTRADA</label>
+                <input type="date" id="fecha_entrada_f" name="entrada" required>
+            </div>
+            <div>
+                <label for="salida">SALIDA</label>
+                <input type="date" id="fecha_salida_f" name="salida" required>
+            </div>
+            <div>
+                <label for="ocupacion">OCUPACIÓN</label>
+                <input type="number" id="ocupacion_f" name="ocupacion" min="1" max="10" required>
+            </div>
+            <button type="submit" id="submit-button" disabled>CONSULTAR DISPONIBILIDAD</button>
+        </form>
+    </div>
+    <!-- FIN FIXED -->
+
+    <main>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Servicios -->
+    <div class="container-xxl py-5" id="Servicios">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title text-center color-red text-uppercase">Nuestros Servicios</h6>
+                <h1 class="mb-5">Explora nuestros <span class="color-red text-uppercase">Servicios</span></h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-hotel fa-2x color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Habitaciones</h5>
+                        <p class="text-body mb-0">“Disfrute de nuestras cómodas habitaciones, diseñadas para su descanso y conveniencia durante su alojamiento.”</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-utensils fa-2x color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Desayuno, Almuerzo y Cena</h5>
+                        <p class="text-body mb-0">“Ofrecemos una selección de comidas sabrosas y prácticas para su conveniencia.”</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa-2x bi-car-front-fill color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Estacionamiento</h5>
+                        <p class="text-body mb-0">“Disponemos de estacionamiento amplio y seguro, para su tranquilidad y comodidad.”</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="bi bi-telephone-fill fa-2x color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Discado Internacional</h5>
+                        <p class="text-body mb-0">"Ofrecemos discado internacional para que se mantenga conectado con facilidad durante su estancia."</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="fa fa-glass-cheers fa-2x color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Salones de Eventos</h5>
+                        <p class="text-body mb-0">“Contamos con salones de eventos versátil, ideal para reuniones, conferencias o celebraciones especiales.”</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <a class="service-item rounded" href="">
+                        <div class="service-icon bg-transparent border rounded p-1">
+                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
+                                <i class="bi bi-wifi fa-2x color-red"></i>
+                            </div>
+                        </div>
+                        <h5 class="mb-3">Internet con Wifi</h5>
+                        <p class="text-body mb-0">“Brindamos servicio de internet con Wi-Fi para asegurar su conexión continua y sin complicaciones durante su visita.”</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de servicios -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-no">
+            <h2>Sobre Nosotros</h2>
+            <p>Gran Hotel Muso es un lugar de confort y elegancia, ideal para disfrutar de unas vacaciones inolvidables. Con una amplia gama de servicios y una atención personalizada, nuestro objetivo es brindarte una experiencia excepcional.</p>
+        </div>
+        <div class="footer-po">
+            <a id="politicasLink" data-toggle="modal" data-target="#exampleModalLong">Políticas</a>
+        </div>
+        <div class="footer-con">
+            <h2>Contacto</h2>
+            <p>Dirección: Valdivia Nº 222 Los Angeles</p>
+            <p>Teléfono: +56 43 2546100, +56 43 2313183</p>
+            <p>Email: contacto@hotelmuso.cl</p>
+            <div>
+                <a href="#"><img src="img/Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/Linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN FOOTER -->
+
+      <!-- Modal Politicas-->
+ <!-- Modal -->
+ <div class="modal fade" id="politicasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Políticas del hotel y<br> Términos y Condiciones</h5>
+        </div>
+        <div class="modal-body text-black text-start">
+                <strong>1. Registro e inicio de sesión</strong><br>
+                <ul class="list-disc text-black">
+                  <li>Para realizar una reserva, es necesario estar registrado en nuestra plataforma.</li>
+                  <li>Deben iniciar sesión con su cuenta para poder efectuar y gestionar sus reservas.</li>
+                  <li>La información proporcionada durante el registro debe ser precisa y actualizada.</li>
+                </ul>
+                <br>
+                <strong>2. Reservas</strong><br>
+                <ul class="list-disc">
+                  <li>Las reservas están sujetas a disponibilidad.</li>
+                  <li>Sólo se pueden realizar reservas con una sesión iniciada en la plataforma.</li>
+                  <li>Las tarifas y servicios pueden variar según el tipo de habitación seleccionada.</li>
+                </ul>
+                <br>
+                <strong>3. Servicios</strong><br>
+                <ul class="list-disc">
+                  <li>Los servicios como tipo de desayuno, aire acondicionado, estacionamiento, TV y teléfono dependen del tipo de habitación o salón reservado.</li>
+                  <li>Consulte la descripción de cada habitación para conocer los servicios incluidos.</li>
+                  <li>El almuerzo y la cena no están incluidos en la tarifa de la habitación y deben solicitarse por separado directamente en el comedor del hotel.</li>
+                </ul>
+                <br>
+                <strong>4. Cancelación</strong><br>
+                <ul class="list-disc">
+                  <li>La política de cancelación varía según la tarifa seleccionada. La cual corresponde al 30% del valor de la habitación o salón.</li>
+                  <li>Lea cuidadosamente las condiciones antes de confirmar su reserva.</li>
+                </ul>
+                <br>
+                <strong>5. Devolución</strong><br>
+                <ul class="list-disc">
+                  <li>Las devoluciones llegaran en un plazo de 3 a 7 días hábiles, a la misma cuenta con la que se efectuó el pago.</li>
+                </ul>
+                <br>
+                <strong>6. Check-in y check-out</strong><br>
+                <ul class="list-disc">
+                  <li>El horario de check-in es a partir de las 15:00 horas.</li>
+                  <li>El horario de check-out es hasta las 11:30 horas.</li>
+                </ul>
+                <br>
+                <strong>7. Pago</strong><br>
+                <ul class="list-disc">
+                  <li>Los pagos se realizarán exclusivamente a través de Mercado Pago.</li>
+                  <li>Se aceptan tarjetas de débito y crédito como métodos de pago.</li>
+                  <li>El pago se efectuará al momento de la reserva o según lo especificado en las condiciones de la tarifa seleccionada.</li>
+                  <li>No se acepta efectivo ni cheques.</li>
+                </ul>
+                <br>
+                <strong>8. Responsabilidad</strong><br>
+                <ul class="list-disc">
+                  <li>El hotel no se hace responsable por objetos de valor no depositados en la caja de seguridad.</li>
+                  <li>Los huéspedes son responsables de cualquier daño causado a las instalaciones del hotel.</li>
+                </ul>
+                <br>
+                <strong>9. Políticas del hotel</strong><br>
+                <ul class="list-disc">
+                  <li>No se permiten mascotas, salvo perros guía.</li>
+                  <li>El hotel es un espacio libre de humo.</li>
+                  <li>Las valoraciones asignadas en cada habitación y salón están establecidas por el hotel, dependiendo de los servicios que incluye.</li>
+                </ul>
+                <br>
+                <strong>10. Privacidad</strong><br>
+                <ul class="list-disc">
+                  <li>Sus datos personales serán tratados de acuerdo con nuestra política de privacidad.</li>
+                </ul>
+                <br>
+                <strong>11. Modificaciones</strong><br>
+                <ul class="list-disc">
+                  <li>El Gran Hotel Muso se reserva el derecho de modificar estos términos y condiciones.</li>
+                  <li>El Gran Hotel Muso sugiere la revisión periódica de estos Términos y Condiciones cada vez que se acceda a la página Web.</li>
+                </ul>
+                <br>
+                <strong>12. Ley aplicable</strong><br>
+                <ul class="list-disc">
+                  <li>Estos términos y condiciones se rigen por las leyes de la República de Chile.</li>
+                </ul>
+                <br>
+                <strong>13. Políticas para niños</strong><br>
+                <ul class="list-disc">
+                  <li>Niños de hasta 1 año y 11 meses de edad no tienen costo.</li>
+                  <li>Normalmente, son considerados niños, los huéspedes comprendidos entre 2 y 11 años, deberá considerarlo al momento de reservar.</li>
+                  <li>La mayoría de las habitaciones no tienen espacio para una cama adicional para los niños, y por lo tanto, la capacidad máxima es la misma tanto para adultos como niños.</li>
+                </ul>
+                <br>
+                <p>Al registrarse en nuestra plataforma y realizar una reserva, usted acepta estos términos y condiciones.</p>
+                <br>
+                <strong class="text-left">Política de Privacidad - Gran Hotel Muso</strong><br>
+                <ul class="list-disc">
+                  <li>Recolectamos información personal cuando usted se registra en nuestra plataforma, realiza una reserva o utiliza nuestros servicios. Esta información puede incluir su nombre, dirección de correo electrónico, número de teléfono y datos de pago.</li>
+                  <li>Utilizamos su información personal para:
+                    <ul class="list-disc">
+                      <li>Procesar y gestionar sus reservas.</li>
+                      <li>Proporcionar los servicios solicitados.</li>
+                      <li>Comunicarnos con usted sobre su estancia.</li>
+                    </ul>
+                  </li>
+                  <li>Implementamos medidas de seguridad para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.</li>
+                  <li>No vendemos ni compartimos su información personal con terceros, excepto cuando sea necesario para proporcionar nuestros servicios (por ejemplo, con Mercado Pago para procesar pagos).</li>
+                  <li>Nos reservamos el derecho de modificar esta política de privacidad.</li>
+                  <li>Si tiene preguntas sobre nuestra política de privacidad, puede contactarnos a través de nuestros contactos especificados al final de la web.</li>
+                </ul>
+                <br>
+                <p>Al utilizar nuestros servicios, usted acepta las prácticas descritas en esta política de privacidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- SCRIPTS -->
+    <!-- NO ES LA ULTIMA VERSION DEL JQUERY, LA ULTIMA ES LA 3.7.1, pero esta funciona bien igual con bootstrap 5.3.3 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  -->
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="JS/base.js"></script> 
+    <script src="./main.js" type="module"></script>   
+    <!--  -->
+    <!--  -->
+    <!-- JERARQUIA DE JS -->
+    <!--  -->
+    <!--  -->
+    <!-- FIN SCRIPTS -->
+</body>
+</html>

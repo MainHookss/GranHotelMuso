@@ -1,0 +1,441 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+/* ----------------------------------NAV------------------------------------------------------------------------------------------- */
+/* ------------------Menu Principal----------------------------------------------------------------------------------------------- */
+
+.nav {
+    display: flex;
+    position: relative;
+    z-index: 10000;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #800000; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border-bottom: 3px solid red; /* Línea roja de 5px de grosor */
+    
+}
+
+/* Estilo para el contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 60px; /* Ajusta el tamaño de la imagen del logo */
+    margin-right: 5px; /* Espacio entre el logo y el título */
+}
+
+.logo-container h1 {
+    font-size: 24px; /* Tamaño del texto del título */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilo para el contenedor del menú */
+.menu-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+}
+
+.menu-container ul {
+    display: flex;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+}
+
+.menu-container ul li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+.menu-container ul li a {
+    color: #fff; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 18px; /* Tamaño del texto de los enlaces */
+}
+
+.menu-container ul li a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón por encima */
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+/* Inicio de sesión */
+.login-container {
+    margin-right: 20px; /* Espacio antes del inicio de sesión */
+}
+
+.login-container a {
+    display: inline-block; /* Hace que el enlace sea un bloque para poder aplicar anchos y alturas */
+    padding: 10px 20px; /* Padding interno para espacio dentro del botón */
+    background-color: #ff0202; /* Color de fondo rojo */
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 18px; /* Tamaño del texto del enlace */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+#misReservas, #cerrarSesion {
+    display: inline;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+#misReservas:hover, #cerrarSesion:hover {
+    text-decoration: underline;
+}
+
+.login-container a:hover {
+    background-color: #d60000; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Mostrar el contenedor cuando la clase show está presente */
+#login-register-container.show {
+    display: block;
+}
+
+/* Ajustes para los tabs */
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.show {
+    display: block;
+}
+
+/* Espaciado interno (padding) de los botones de la pestaña de navegación */
+.nav-tabs .nav-link {
+    text-align: center; /* Centra el texto dentro de los botones */
+    width: 120px; /* Ajustar el ancho de los botones */
+    padding: 10px; /* Ajustar el padding interno */
+}
+
+/* Ajustes para los botones de login y registro */
+.nav-tabs .nav-link#login-tab {
+    margin-right: 10px; /* Separar los botones */
+}
+
+.nav-tabs .nav-link#register-tab {
+    margin-left: 10px; /* Separar los botones */
+}
+
+/* Estilo del contenedor de formularios */
+#login-register-container {
+    position: absolute;
+    top: 100%; /* Justo debajo del nav */
+    right: 0; /* Alineado a la derecha */
+    background-color: #800000;
+    padding: 20px; /* Incrementar el padding */
+    border: 1px solid #ff0000;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+
+}
+
+/* Estilo para los botones del formulario dentro de #myTabContent */
+#myTabContent .tab-pane form .btn-primary, 
+#myTabContent .tab-pane form .btn-warning {
+    width: 100%; /* Ajustar el ancho */
+    margin: 5px 1%; /* Espaciado entre botones */
+}
+
+/* Elimina cualquier margen por defecto */
+.form-group {
+    margin-bottom: 15px; /* Separar los campos del formulario */
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------HEADER + FORM---------------------------------------------------------------------------------------------- */
+/* ------------------------Header + formulario y img------------------------------------------------------------------------------------- */
+header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/bg.jpg'); /* Reemplaza con la ruta real de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 5px solid red; Línea roja de 5px de grosor */
+}
+
+/* Estilo para el contenido del encabezado */
+header h1 {
+    font-size: 48px; /* Tamaño del texto */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alineación centrada */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Sombra del texto */
+}
+
+/* Estilos base */
+/* Estilos generales de la tabla */
+header .mis-reservas-tabla {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+/* Estilos para las celdas de la tabla */
+header .mis-reservas-tabla th, header .mis-reservas-tabla td {
+    padding: 12px 15px;
+}
+
+/* Estilos para los encabezados de la tabla */
+header .mis-reservas-tabla th {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    header .mis-reservas-tabla {
+        width: 100%;
+        font-size: 14px; /* Ajustar el tamaño de la fuente para pantallas pequeñas */
+        padding: 5px 10px; /* Reducir el relleno para pantallas pequeñas */
+    }
+
+    header .mis-reservas-tabla th, header .mis-reservas-tabla td {
+        padding: 10px 10px; /* Ajustar el relleno para celdas en pantallas pequeñas */
+    }
+
+    /* Hacer que la tabla se despliegue en modo vertical */
+    header .mis-reservas-tabla,
+    header .mis-reservas-tabla thead,
+    header .mis-reservas-tabla tbody,
+    header .mis-reservas-tabla th,
+    header .mis-reservas-tabla td,
+    header .mis-reservas-tabla tr {
+        display: block;
+    }
+
+    /* Ocultar los encabezados de la tabla en dispositivos móviles */
+    header .mis-reservas-tabla thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    /* Estilos para cada fila en dispositivos móviles */
+    header .mis-reservas-tabla tr {
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+    }
+
+    /* Mostrar el contenido de las celdas con pseudoelementos */
+    header .mis-reservas-tabla td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    header .mis-reservas-tabla td:before {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        transform: translateY(-50%);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Contenido de los pseudoelementos basado en los encabezados */
+    header .mis-reservas-tabla td:nth-of-type(1):before { content: "Correo"; }
+    header .mis-reservas-tabla td:nth-of-type(2):before { content: "Habitación/Salón"; }
+    header .mis-reservas-tabla td:nth-of-type(3):before { content: "Fecha Entrada"; }
+    header .mis-reservas-tabla td:nth-of-type(4):before { content: "Fecha Salida"; }
+    header .mis-reservas-tabla td:nth-of-type(5):before { content: "Ocupación"; }
+    /* Agrega más según el número de columnas de tu tabla */
+}
+
+/* Estilos específicos para el menú especial */
+.mi-menu-especial .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mi-menu-especial .header-content img {
+    margin-top: 20px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.mi-menu-especial {
+    max-width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+.mi-menu-especial .form-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 20px;
+    border: 1px solid #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 50%;
+    max-width: 80%; /* Hacer el formulario más ancho ocupando más del contenedor padre */
+    margin: 40px auto;
+}
+
+.mi-menu-especial .form-row {
+    margin-bottom: 15px;
+}
+
+.mi-menu-especial label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mi-menu-especial input[type="date"],
+.mi-menu-especial input[type="number"],
+.mi-menu-especial button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.mi-menu-especial button {
+    background-color: #e60000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.mi-menu-especial button:hover {
+    background-color: #cc0000;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------FIXED FORM----------------------------------------------------------------------- */
+/* -----------------------------------formulario - menu oculto-------------------------------------------------------- */
+
+#fixed {
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: #0c0c42; /* Color de fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    opacity: 0; /* Inicialmente transparente */
+    z-index: 1000; /* Asegurar que esté encima del contenido principal */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+#fixed.show {
+    opacity: 1; /* Hacer visible */
+    
+}
+
+#fixed form {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente a la línea siguiente si no caben */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+}
+
+#fixed form div {
+    flex: 1 0 200px; /* Flex-grow, flex-shrink, flex-basis */
+    margin-right: 10px; /* Margen entre elementos */
+}
+
+#fixed form div:last-child {
+    flex-basis: calc(100% - 130px); /* Ajuste del último elemento para ocupar el espacio restante */
+}
+
+#fixed form label {
+    display: block;
+    margin-bottom: 5px;
+    color: aliceblue;
+}
+
+#fixed form input[type="date"],
+#fixed form input[type="number"],
+#fixed form button {
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+#fixed form button {
+    background-color: #e60000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#fixed form button:hover {
+    background-color: #cc0000;
+}
+
+#fixed button:disabled {
+    background-color: grey;
+    cursor: default;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------Footer----------------------------------------------------------------------------- */
+
+footer {
+    border-top: 5px solid red;
+    background-color: #800000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+footer a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: underline !important; /* Elimina el subrayado de los enlaces */
+    font-size: 18px;
+    font-weight: bold;
+}
+footer a:hover {
+    color: #d60000; /* Cambia el color del texto al pasar el mouse */
+}
+
+footer div {
+    margin-bottom: 20px;
+}
+
+.footer-con img {
+    margin-top: 20px;
+    width: 30px; /* Ajustar el tamaño de los iconos sociales según sea necesario */
+    height: auto; /* Mantener la proporción */
+}

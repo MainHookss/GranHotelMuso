@@ -1,0 +1,37 @@
+body{
+    background-color: #F1F8FF;
+}
+
+.container h2,
+.container h6,
+.container h5{
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0F172B;
+}
+
+.container p {
+    font-family: "Heebo", sans-serif;
+    color: #666565 !important;
+}
+
+.color-red {
+    color: #e60505cb !important;
+}
+
+.custom-color {
+    color: #666565;
+}
+
+/*** Disponibilidad ***/
+
+.bg-red {
+    background-color: #e60505cb !important;
+}
+
+.bg-white {
+    background-color: white;
+}

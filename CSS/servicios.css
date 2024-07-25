@@ -1,0 +1,70 @@
+body{
+    background-color: #F1F8FF
+}
+.text-body{
+    color: #666565
+}
+
+.container a{
+    text-decoration: none ; 
+}
+.container h1,
+.container h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+/*** Servicios ***/
+
+.service-item {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    transform: translateY(-10px);
+}
+
+.service-item .service-icon {
+    margin: 0 auto 30px auto;
+    width: 65px;
+    height: 65px;
+    transition: .5s;
+}
+
+.service-item i,
+.service-item h5,
+.service-item p {
+    transition: .5s;
+    
+}
+
+.service-item h5{
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.service-item p{
+    color: #666565 !important;
+    font-family: "Montserrat", sans-serif;
+}
+
+.service-item:hover i,
+.service-item:hover h5,
+.service-item:hover p {
+    color: #e60505cb !important;
+}
+
+.color-red {
+    color: #e60505cb !important;
+}
