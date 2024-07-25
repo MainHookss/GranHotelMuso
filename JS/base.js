@@ -1,20 +1,5 @@
 // FIXED Y BOTON DESPUES DE HEADER
-window.addEventListener('scroll', function() {
-    var header = document.querySelector('header');
-    var fixed = document.getElementById('fixed');
-    var submitButton = document.getElementById('submit-button');
 
-    var headerHeight = header.offsetHeight;
-    var scrollPosition = window.scrollY || window.pageYOffset;
-
-    if (scrollPosition > headerHeight) {
-        fixed.classList.add('disabled');
-        submitButton.removeAttribute('disabled');
-    } else {
-        fixed.classList.remove('disables');
-        submitButton.setAttribute('disabled', 'disabled');
-    }
-});
 
 // CONTENEDOR DEL LOGIN/REGISTER
 document.addEventListener("DOMContentLoaded", function() {
