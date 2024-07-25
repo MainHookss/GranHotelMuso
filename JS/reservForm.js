@@ -101,16 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fechaEntradaInput = document.querySelector('#fecha_entrada');
     const fechaSalidaInput = document.querySelector('#fecha_salida');
     const ocupacionInput = document.querySelector('#ocupacion');
-    const fechaEntradaInputFixed = document.querySelector('#fixed #fecha_entrada_f');
-    const fechaSalidaInputFixed = document.querySelector('#fixed #fecha_salida_f');
-    const ocupacionInputFixed = document.querySelector('#fixed #ocupacion_f');
+
 
     fechaEntradaInput.value = params.get('fecha_entrada') || '';
     fechaSalidaInput.value = params.get('fecha_salida') || '';
     ocupacionInput.value = params.get('ocupacion') || '';
-    fechaEntradaInputFixed.value = params.get('fecha_entrada') || '';
-    fechaSalidaInputFixed.value = params.get('fecha_salida') || '';
-    ocupacionInputFixed.value = params.get('ocupacion') || '';
+
 });
 
 // Reservar habitación
